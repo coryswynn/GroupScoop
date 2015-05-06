@@ -114,9 +114,28 @@
             <point key="canvasLocation" x="459.5" y="1189.5"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="o8A-Lu-YGe">
+            <objects>
+                <viewController id="CnU-li-4fN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SAK-HW-TTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="S1S-c4-iEq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gOL-X5-KAv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Epc-LW-SQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.5" y="1189.5"/>
+        </scene>
+        <!--Sign In View Controller-->
         <scene sceneID="8yK-UU-r3h">
             <objects>
-                <viewController id="iXi-f1-O6y" sceneMemberID="viewController">
+                <viewController id="iXi-f1-O6y" customClass="SignInViewController" customModule="GroupScoop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bvz-2o-Ck1"/>
                         <viewControllerLayoutGuide type="bottom" id="5zc-Ut-GUY"/>
@@ -168,11 +187,21 @@
                                 <state key="normal" image="Submit.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="iXi-f1-O6y" eventType="touchUpInside" id="g4E-CF-E18"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="email" destination="e3O-Lx-dxf" id="qvC-2P-UVH"/>
+                        <outlet property="password" destination="QxV-ju-mJ0" id="qiP-NJ-OJq"/>
+                        <outlet property="phone" destination="h1f-So-8vi" id="gWJ-Bx-45v"/>
+                        <outlet property="username" destination="Wdz-gH-Bhy" id="lwr-KI-qMe"/>
+                        <segue destination="CnU-li-4fN" kind="show" identifier="signedUp" id="Fxz-aR-Kbt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDl-nn-OsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,6 +218,6 @@
         <image name="welcomeBackground.jpeg" width="1745" height="2733"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kJL-gz-RF8"/>
+        <segue reference="Ggb-ao-9FO"/>
     </inferredMetricsTieBreakers>
 </document>

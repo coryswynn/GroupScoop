@@ -33,7 +33,7 @@ class SwiftPromptsView: UIView
     private var promtHeader : String = "Success"
     private var promptHeaderTxtSize : CGFloat = 20.0
     private var promptContentText : String = "You have successfully posted this item to your Facebook wall."
-    private var promptContentTxtSize : CGFloat = 18.0
+    private var promptContentTxtSize : CGFloat = 14.0
     private var promptTopBarVisibility : Bool = false
     private var promptBottomBarVisibility : Bool = true
     private var promptTopLineVisibility : Bool = true
