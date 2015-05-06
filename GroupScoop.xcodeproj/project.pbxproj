@@ -35,6 +35,13 @@
 		F1D1EA8C1AF9D66300FC1E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D1EA8B1AF9D66300FC1E92 /* libsqlite3.dylib */; };
 		F1D1EA8E1AF9D66E00FC1E92 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D1EA8D1AF9D66E00FC1E92 /* Accounts.framework */; };
 		F1D1EA901AF9D67200FC1E92 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D1EA8F1AF9D67200FC1E92 /* Social.framework */; };
+		F1D1EA951AF9D9F600FC1E92 /* welcomeBackground.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EA941AF9D9F600FC1E92 /* welcomeBackground.jpeg */; };
+		F1D1EA9D1AF9E4AD00FC1E92 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EA9C1AF9E4AD00FC1E92 /* SignUp.png */; };
+		F1D1EA9F1AF9E54E00FC1E92 /* LogIn.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EA9E1AF9E54E00FC1E92 /* LogIn.png */; };
+		F1D1EAA11AF9E6AC00FC1E92 /* Sunset.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA01AF9E6AC00FC1E92 /* Sunset.jpeg */; };
+		F1D1EAA31AF9E9E800FC1E92 /* Submit.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA21AF9E9E800FC1E92 /* Submit.png */; };
+		F1D1EAA71AF9EB9000FC1E92 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA61AF9EB9000FC1E92 /* close.png */; };
+		F1D1EAA91AF9EC3A00FC1E92 /* sky.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA81AF9EC3A00FC1E92 /* sky.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,13 @@
 		F1D1EA8B1AF9D66300FC1E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F1D1EA8D1AF9D66E00FC1E92 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F1D1EA8F1AF9D67200FC1E92 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F1D1EA941AF9D9F600FC1E92 /* welcomeBackground.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcomeBackground.jpeg; sourceTree = "<group>"; };
+		F1D1EA9C1AF9E4AD00FC1E92 /* SignUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp.png; sourceTree = "<group>"; };
+		F1D1EA9E1AF9E54E00FC1E92 /* LogIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogIn.png; sourceTree = "<group>"; };
+		F1D1EAA01AF9E6AC00FC1E92 /* Sunset.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sunset.jpeg; sourceTree = "<group>"; };
+		F1D1EAA21AF9E9E800FC1E92 /* Submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Submit.png; sourceTree = "<group>"; };
+		F1D1EAA61AF9EB9000FC1E92 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		F1D1EAA81AF9EC3A00FC1E92 /* sky.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +159,7 @@
 				F1D1EA471AF9D19300FC1E92 /* Main.storyboard */,
 				F1D1EA4A1AF9D19300FC1E92 /* Images.xcassets */,
 				F1D1EA4C1AF9D19300FC1E92 /* LaunchScreen.xib */,
+				F1D1EA911AF9D86B00FC1E92 /* Images */,
 				F1D1EA6A1AF9D3B800FC1E92 /* Frameworks */,
 				F1D1EA411AF9D19300FC1E92 /* Supporting Files */,
 			);
@@ -213,6 +228,21 @@
 			name = Frameworks;
 			path = GroupScoop.xcodeproj;
 			sourceTree = SOURCE_ROOT;
+		};
+		F1D1EA911AF9D86B00FC1E92 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F1D1EAA81AF9EC3A00FC1E92 /* sky.jpeg */,
+				F1D1EAA61AF9EB9000FC1E92 /* close.png */,
+				F1D1EAA21AF9E9E800FC1E92 /* Submit.png */,
+				F1D1EAA01AF9E6AC00FC1E92 /* Sunset.jpeg */,
+				F1D1EA9E1AF9E54E00FC1E92 /* LogIn.png */,
+				F1D1EA9C1AF9E4AD00FC1E92 /* SignUp.png */,
+				F1D1EA941AF9D9F600FC1E92 /* welcomeBackground.jpeg */,
+			);
+			name = Images;
+			path = ../GroupScoop.xcodeproj;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -294,9 +324,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D1EAA71AF9EB9000FC1E92 /* close.png in Resources */,
 				F1D1EA491AF9D19300FC1E92 /* Main.storyboard in Resources */,
+				F1D1EAA31AF9E9E800FC1E92 /* Submit.png in Resources */,
 				F1D1EA4E1AF9D19300FC1E92 /* LaunchScreen.xib in Resources */,
+				F1D1EAA11AF9E6AC00FC1E92 /* Sunset.jpeg in Resources */,
+				F1D1EAA91AF9EC3A00FC1E92 /* sky.jpeg in Resources */,
+				F1D1EA9D1AF9E4AD00FC1E92 /* SignUp.png in Resources */,
+				F1D1EA951AF9D9F600FC1E92 /* welcomeBackground.jpeg in Resources */,
 				F1D1EA4B1AF9D19300FC1E92 /* Images.xcassets in Resources */,
+				F1D1EA9F1AF9E54E00FC1E92 /* LogIn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
