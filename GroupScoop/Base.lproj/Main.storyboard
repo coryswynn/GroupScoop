@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="459.5" y="434.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="PhA-OD-DD2">
             <objects>
-                <viewController id="bks-HB-dbi" sceneMemberID="viewController">
+                <viewController id="bks-HB-dbi" customClass="LogInViewController" customModule="GroupScoop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E1c-Fx-XjY"/>
                         <viewControllerLayoutGuide type="bottom" id="VeT-jg-7L1"/>
@@ -78,7 +78,7 @@
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idr-7L-L2j">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idr-7L-L2j" customClass="log">
                                 <rect key="frame" x="63" y="284" width="248" height="30"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -103,11 +103,19 @@
                                 <state key="normal" image="Submit.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="bks-HB-dbi" eventType="touchUpInside" id="YsY-4v-3eu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="password" destination="DnB-Mi-8DG" id="7TB-GD-FSL"/>
+                        <outlet property="username" destination="idr-7L-L2j" id="3es-gh-uff"/>
+                        <segue destination="CnU-li-4fN" kind="show" identifier="loggedIn" id="urO-ps-JIW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x21-RL-fze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,22 +162,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-gH-Bhy">
-                                <rect key="frame" x="63" y="214" width="248" height="30"/>
+                                <rect key="frame" x="62" y="245" width="248" height="30"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3O-Lx-dxf">
-                                <rect key="frame" x="63" y="265" width="248" height="30"/>
+                                <rect key="frame" x="62" y="299" width="248" height="30"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1f-So-8vi">
-                                <rect key="frame" x="63" y="319" width="248" height="30"/>
+                                <rect key="frame" x="62" y="350" width="248" height="30"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-ju-mJ0">
-                                <rect key="frame" x="62" y="378" width="248" height="30"/>
+                                <rect key="frame" x="62" y="404" width="248" height="30"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -191,12 +199,18 @@
                                     <action selector="submitPressed:" destination="iXi-f1-O6y" eventType="touchUpInside" id="g4E-CF-E18"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-Y7-Da0">
+                                <rect key="frame" x="62" y="192" width="248" height="30"/>
+                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="email" destination="e3O-Lx-dxf" id="qvC-2P-UVH"/>
+                        <outlet property="name" destination="RXW-Y7-Da0" id="Xk0-Lv-HaW"/>
                         <outlet property="password" destination="QxV-ju-mJ0" id="qiP-NJ-OJq"/>
                         <outlet property="phone" destination="h1f-So-8vi" id="gWJ-Bx-45v"/>
                         <outlet property="username" destination="Wdz-gH-Bhy" id="lwr-KI-qMe"/>
@@ -219,5 +233,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ggb-ao-9FO"/>
+        <segue reference="Fxz-aR-Kbt"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  LogInViewController.swift
 //  GroupScoop
 //
 //  Created by Cory Wynn on 5/6/15.
@@ -9,10 +9,10 @@
 import UIKit
 import Parse
 
-class SignInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsProtocol {
+class LogInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsProtocol {
     
-// HELPER FUNCTIONS
-    //DisplayAlert helper functions 
+    // HELPER FUNCTIONS
+    //DisplayAlert helper functions
     
     func promptWasDismissed() {
         self.prompt.dismissPrompt()
@@ -22,31 +22,26 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsP
     func clickedOnTheMainButton() {
         println("Clicked on the main button")
         self.prompt.dismissPrompt()
-    
+        
         if signUpSuccessful == true {
         
-            PFUser.logInWithUsernameInBackground(self.username.text, password: self.password.text) {
-                (user: PFUser?, signupError: NSError?) -> Void in
-                
-                self.performSegueWithIdentifier("signedUp", sender: self)
-                
-                println("Logged in")
-                
-            }
+            self.performSegueWithIdentifier("loggedIn", sender: self)
+        
+            println("Logged in")
+        
         } else {
             
             
         }
-    
-    
+
     }
-    
+
     // Dismisses the keyboard when touched outside
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
         self.view.endEditing(true)
-    
+        
     }
     
     
@@ -60,18 +55,18 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsP
         
     }
     
-
+    
     func displayAlert (title: String, textbody: String) {
         
         if signUpSuccessful == true {
-        
+            
             //Create an instance of SwiftPromptsView and assign its delegate
             prompt = SwiftPromptsView(frame: self.view.bounds)
             prompt.delegate = self
-        
+            
             //Set the properties for the background
             prompt.enableLightEffectView()
-        
+            
             //Set the properties of the promt
             prompt.setPromtHeader(title)
             prompt.setPromptContentText(textbody)
@@ -83,9 +78,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsP
             prompt.setPromptBottomBarColor(UIColor(red: 34.0/255.0, green: 139.0/255.0, blue: 34.0/255.0, alpha: 0.67))
             prompt.setMainButtonColor(UIColor.whiteColor())
             prompt.setMainButtonText("OK")
-        
+            
             self.view.addSubview(prompt)
-        
+            
         } else {
             
             //Create an instance of SwiftPromptsView and assign its delegate
@@ -114,101 +109,65 @@ class SignInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsP
             
             self.view.addSubview(prompt)
         }
-    
+        
     }
     
-// OBJECTS
+    // OBJECTS
+    
+    var timer = NSTimer()
+    
+    var error = ""
     
     var signUpSuccessful = false
     
     var prompt = SwiftPromptsView()
     
-    @IBOutlet var name: UITextField!
-    
+    var user = PFUser.currentUser()
+   
     @IBOutlet var username: UITextField!
-
-    @IBOutlet var email: UITextField!
-    
-    @IBOutlet var phone: UITextField!
     
     @IBOutlet var password: UITextField!
     
-// ACTIONS
+    // ACTIONS
     
     @IBAction func submitPressed(sender: AnyObject) {
-    
-        var error = ""
-        
-        if username.text == "" || password.text == "" {
+        PFUser.logInWithUsernameInBackground(self.username.text, password: self.password.text) {
+                (user: PFUser?, signupError: NSError?) -> Void in
             
-            error = "Please enter both a username and password"
+            if signupError == nil {
+                
+                var user = PFUser.currentUser()?.username!
             
-        } else if email.text == "" {
+                self.signUpSuccessful = true 
             
-            error = "Please enter an email address"
-            
-        } else if phone.text == "" {
-            
-            error = "Please enter a phone number"
-    
-        }
-        
-        if error != "" {
-            
-           self.displayAlert("Uh Oh! Error!", textbody: error)
-            
-        } else {
-            
-            // Record all of the information of users to parse
-            
-            var user = PFUser()
-            user["name"] = name.text
-            user.username = username.text
-            user.password = password.text
-            user.email = email.text
-            user["phone"] = phone.text
-            
-            user.signUpInBackgroundWithBlock {
-                (succeeded: Bool, signupError: NSError?) -> Void in
+                self.displayAlert("Success!", textbody: "Welcome back, \(user!)!")
+                
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "clickedOnTheMainButton", userInfo: nil, repeats: false)
+                
+            } else {
+                
+                if let errorString = signupError?.userInfo?["error"] as? NSString {
                     
-                if signupError == nil {
-                    
-                    // Display success message -- successfully logged in
-                    
-                    self.displayAlert("Success!", textbody: "You have successfully signed up for GroupScoop!")
-                    
-                    println("signed up")
-                    
+                    self.error = String(errorString)
+                    self.displayAlert("Uh Oh! Error!", textbody: self.error)
+                
                 } else {
                     
-                    if let errorString = signupError?.userInfo?["error"] as? NSString {
+                    self.error = "Please try again later."
+                    self.displayAlert("Uh Oh! Error!", textbody: self.error)
                     
-                        error = String(errorString)
-                        self.displayAlert("Uh Oh! Error!", textbody: error)
-                            
-                    } else {
-                            
-                        error = "Please try again later."
-                            
-                        }
-                        
-                    // Display could not sign up
-                        
+                    
                 }
             }
-                
         }
-    
     }
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.username.delegate = self
-        self.email.delegate = self
-        self.phone.delegate = self
         self.password.delegate = self
         
     }

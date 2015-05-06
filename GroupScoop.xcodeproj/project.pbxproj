@@ -43,6 +43,7 @@
 		F1D1EAA71AF9EB9000FC1E92 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA61AF9EB9000FC1E92 /* close.png */; };
 		F1D1EAA91AF9EC3A00FC1E92 /* sky.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F1D1EAA81AF9EC3A00FC1E92 /* sky.jpeg */; };
 		F1D1EAAB1AF9EE2D00FC1E92 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1EAAA1AF9EE2D00FC1E92 /* SignInViewController.swift */; };
+		F1D1EAAD1AFA092D00FC1E92 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D1EAAC1AFA092D00FC1E92 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		F1D1EAA61AF9EB9000FC1E92 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		F1D1EAA81AF9EC3A00FC1E92 /* sky.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpeg; sourceTree = "<group>"; };
 		F1D1EAAA1AF9EE2D00FC1E92 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F1D1EAAC1AFA092D00FC1E92 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				F1D1EA431AF9D19300FC1E92 /* AppDelegate.swift */,
 				F1D1EA451AF9D19300FC1E92 /* ViewController.swift */,
 				F1D1EAAA1AF9EE2D00FC1E92 /* SignInViewController.swift */,
+				F1D1EAAC1AFA092D00FC1E92 /* LogInViewController.swift */,
 				F1D1EA471AF9D19300FC1E92 /* Main.storyboard */,
 				F1D1EA4A1AF9D19300FC1E92 /* Images.xcassets */,
 				F1D1EA4C1AF9D19300FC1E92 /* LaunchScreen.xib */,
@@ -357,6 +360,7 @@
 				F1D1EA681AF9D39E00FC1E92 /* UIImageEffects.swift in Sources */,
 				F1D1EA461AF9D19300FC1E92 /* ViewController.swift in Sources */,
 				F1D1EAAB1AF9EE2D00FC1E92 /* SignInViewController.swift in Sources */,
+				F1D1EAAD1AFA092D00FC1E92 /* LogInViewController.swift in Sources */,
 				F1D1EA661AF9D39E00FC1E92 /* SwiftPromptsView.swift in Sources */,
 				F1D1EA441AF9D19300FC1E92 /* AppDelegate.swift in Sources */,
 				F1D1EA671AF9D39E00FC1E92 /* SwiftPrompts.swift in Sources */,
