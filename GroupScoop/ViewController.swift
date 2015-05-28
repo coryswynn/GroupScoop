@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
@@ -22,6 +23,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+//    override func viewDidAppear(animated: Bool) {
+//        
+//        if PFUser.currentUser() != nil {
+//            
+//            self.performSegueWithIdentifier("alreadyLoggedIn", sender: self)
+//            println("Launching to UserViewController")
+//            
+//        }
+//        
+//        
+//    }
+    
 
 }
 
