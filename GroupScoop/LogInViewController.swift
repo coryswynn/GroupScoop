@@ -142,7 +142,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate, SwiftPromptsPr
             
                 self.displayAlert("Success!", textbody: "Welcome back, \(user!)!")
                 
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "clickedOnTheMainButton", userInfo: nil, repeats: false)
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "clickedOnTheMainButton", userInfo: nil, repeats: false)
                 
             } else {
                 
